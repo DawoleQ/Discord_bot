@@ -3,9 +3,11 @@ from discord.ext import commands
 from discord import app_commands
 import dotenv
 import os
+dotenv.load_dotenv()
 
 intents = discord.Intents.all()
-client = commands.Bot(command_prefix='$', help_command=None, intents=intents)
+OWNER_ID = os.getenv('OWNER_ID')
+client = commands.Bot(command_prefix='$', help_command=None, intents=intents, owner_id=OWNER_ID)
 
 @client.event
 async def on_ready():
@@ -47,6 +49,5 @@ async def treesync(ctx):
     else: await ctx.send('Udało się zsynchronizować drzewko poleceń')
 
 # running the client
-dotenv.load_dotenv()
 TOKEN = os.getenv('TOKEN')
 client.run(TOKEN)
