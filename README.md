@@ -7,6 +7,6 @@ TOKEN = 'your_bot_token_here'
 OWNER_ID = bot_owner_id_here
 
 Also, you should add your bot to a server with the "bot" and "applications.commands" scopes
-you should also enable all intents for your bot (All of this is done on the discord developer portal [But])
+you should also enable all intents for your bot (All of this is done on the discord developer portal [But you probably already know that hehe])
 
 For now it does literally nothing XD you can use this as an template
