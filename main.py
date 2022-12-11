@@ -26,16 +26,16 @@ async def on_ready():
 async def on_guild_join(guild):
     guildId = guild.id
     guildV = client.get_guild(guildId)
-    print(f'Bot dołączył do servera {guildV}')
+    print(f'Bot joined a server named {guildV}')
 
 @client.event
 async def on_command_error(ctx, error):
-    await ctx.send('Błąd')
+    await ctx.send('error')
 
 # test command
 @app_commands.command(name='test')
 async def app_command_test(ctx):
-    await ctx.response.send_message('test przebiegł pomyślnie')
+    await ctx.response.send_message('test succesful')
 
 # tree syncing command
 @client.command(name='treesync', aliases=['sync'])
@@ -45,8 +45,8 @@ async def treesync(ctx):
         client.tree.add_command(app_command_test, override=True)
         await client.tree.sync()
     except Exception as error:
-        await ctx.send(f'Błąd synchronizacji drzewka poleceń. Błąd: {error}')
-    else: await ctx.send('Udało się zsynchronizować drzewko poleceń')
+        await ctx.send(f'Syncing error: {error}')
+    else: await ctx.send('Syncing succesful')
 
 # running the client
 TOKEN = os.getenv('TOKEN')
