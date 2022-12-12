@@ -28,9 +28,10 @@ async def on_guild_join(guild):
     guildV = client.get_guild(guildId)
     print(f'Bot joined a server named {guildV}')
 
+# Error handler
 @client.event
 async def on_command_error(ctx, error):
-    await ctx.send('error')
+    await ctx.send(error)
 
 # test command
 @app_commands.command(name='test')
@@ -51,5 +52,3 @@ async def treesync(ctx):
 # running the client
 TOKEN = os.getenv('TOKEN')
 client.run(TOKEN)
-
-#test
