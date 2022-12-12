@@ -52,3 +52,4 @@ async def treesync(ctx):
 # running the client
 TOKEN = os.getenv('TOKEN')
 client.run(TOKEN)
+#test
