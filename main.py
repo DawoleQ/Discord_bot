@@ -7,7 +7,7 @@ dotenv.load_dotenv()
 
 intents = discord.Intents.all()
 OWNER_ID = os.getenv('OWNER_ID')
-client = commands.Bot(command_prefix='$', help_command=None, intents=intents, owner_id=OWNER_ID)
+client = commands.Bot(command_prefix='$', owner_id=OWNER_ID, intents=intents)
 
 @client.event
 async def on_ready():
