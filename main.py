@@ -5,6 +5,7 @@ import dotenv
 import os
 dotenv.load_dotenv()
 
+# Initialize bot
 intents = discord.Intents.all()
 OWNER_ID = os.getenv('OWNER_ID')
 client = commands.Bot(command_prefix='$', owner_id=OWNER_ID, intents=intents)
